@@ -8,14 +8,18 @@
         <outputRelativeToContentRoot value="true" />
         <module name="AccountSystemTranslator" />
         <module name="AccountSystemLogic" />
-        <module name="AccountSystemMain" />
         <module name="AccountSystemWeb" />
+        <module name="AccountSystemMain" />
         <module name="AccountSystemRepository" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="AccountSystemDomain" target="8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="AccountSystemDomain" options="-parameters" />
       <module name="AccountSystemLogic" options="-parameters" />
       <module name="AccountSystemMain" options="-parameters" />
       <module name="AccountSystemRepository" options="-parameters" />
