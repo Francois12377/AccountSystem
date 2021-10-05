@@ -3,7 +3,7 @@ package za.ac.nwu.ac.main.service;
 public class GeneralResponse<S> {
     private final boolean successful;
     //private final transient S payload;
-    private String payload;
+    private final String payload;
 
 
 
