@@ -25,4 +25,5 @@ public class AccountTypeController {
     public ResponseEntity<GeneralResponse<String>> getAll() {
        GeneralResponse<String> response = new GeneralResponse<>(true , "No type found");
         return new ResponseEntity<>(response, HttpStatus.OK);}
+
 }
