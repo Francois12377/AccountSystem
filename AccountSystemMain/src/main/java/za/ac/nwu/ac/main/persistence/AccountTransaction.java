@@ -24,9 +24,9 @@ public class AccountTransaction implements Serializable{
 
     public AccountTransaction(Long transactionid, Long accountid, Long memberid, Long amount, LocalDate transactionDate) {
         this.transactionid = transactionid;
-        Accountid = accountid;
-        Memberid = memberid;
-        Amount = amount;
+        this.Accountid = accountid;
+        this.Memberid = memberid;
+        this.Amount = amount;
         this.transactionDate = transactionDate;
     }
 
