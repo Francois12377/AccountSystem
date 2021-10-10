@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.Set;
 
 @Entity
-@Table(name = "DEMO-ACCOUNT", schema = "VITRSA_SANDBOX")
+@Table(name = "demo-account", schema = "accounttype")
 public class AccountType implements Serializable{
 
     @Id

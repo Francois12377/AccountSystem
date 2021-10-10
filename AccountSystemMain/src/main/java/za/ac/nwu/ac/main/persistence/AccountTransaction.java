@@ -6,23 +6,23 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 @Entity
-@Table(name = "DEMO-ACCOUNT", schema = "VITRSA_SANDBOX")
+@Table(name = "account-transaction", schema = "accounttype")
 public class AccountTransaction implements Serializable{
     @Id
     @SequenceGenerator(name = "VIT_RSA_GENERIC_SEQ" , sequenceName = "VITRSA_SANDBOX.VIT_RSA_GENERIC_SEQ", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "VIT_RSA_GENERIC_SEQ")
 
-    private Long transactionid;
+    private int transactionid;
 
-    private Long Accountid;
+    private AccountType Accountid;
 
-    private Long Memberid;
+    private int Memberid;
 
-    private Long Amount;
+    private int Amount;
 
     private LocalDate transactionDate;
 
-    public AccountTransaction(Long transactionid, Long accountid, Long memberid, Long amount, LocalDate transactionDate) {
+    public AccountTransaction(int transactionid, AccountType accountid, int memberid, int amount, LocalDate transactionDate) {
         this.transactionid = transactionid;
         this.Accountid = accountid;
         this.Memberid = memberid;
@@ -30,39 +30,38 @@ public class AccountTransaction implements Serializable{
         this.transactionDate = transactionDate;
     }
 
-    public AccountTransaction() {
-    }
+    public AccountTransaction() {}
     @Column(name = "TRANSID")
-    public Long getTransactionid() {
+    public int getTransactionid() {
         return transactionid;
     }
 
-    public void setTransactionid(Long transactionid) {
+    public void setTransactionid(int transactionid) {
         this.transactionid = transactionid;
     }
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ACCOUNTID")
-    public Long getAccountid() {
+    public AccountType getAccountid() {
         return Accountid;
     }
 
-    public void setAccountid(Long accountid) {
+    public void setAccountid(AccountType accountid) {
         Accountid = accountid;
     }
     @Column(name = "MEMBERID")
-    public Long getMemberid() {
+    public int getMemberid() {
         return Memberid;
     }
 
-    public void setMemberid(Long memberid) {
+    public void setMemberid(int memberid) {
         Memberid = memberid;
     }
     @Column(name = "AMOUNT")
-    public Long getAmount() {
+    public int getAmount() {
         return Amount;
     }
 
-    public void setAmount(Long amount) {
+    public void setAmount(int amount) {
         Amount = amount;
     }
     @Column(name = "TRANSDATE")
